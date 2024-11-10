@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Text Carousel</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+    .carousel-container {
+      text-align: center;
+      padding: 20px;
+      border: 1px solid #ddd;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      max-width: 90%;
+      width: 400px;
+    }
+    .carousel-text {
+      font-size: 1.5rem;
+      margin: 20px 0;
+      line-height: 1.4;
+    }
+    .carousel-button {
+      padding: 12px 24px;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+      color: #fff;
+      background-color: #007bff;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+      width: 100%;
+    }
+    .carousel-button:hover {
+      background-color: #0056b3;
+    }
+    /* Responsive design adjustments */
+    @media (max-width: 600px) {
+      .carousel-text {
+        font-size: 1.2rem;
+      }
+      .carousel-button {
+        font-size: 0.9rem;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="carousel-container">
+  <div id="carouselText" class="carousel-text">Überraschung!</div>
+  <button id="carouselButton" class="carousel-button" onclick="nextText()">Weiter</button>
+</div>
+
+<script>
+  const texts = [
+    "Herzlichen Wilkommen Bengisu!",
+    "Diese Seite habe ich explizit für dich erstellt!",
+    "Das sind 3 Sachen die ich an dich mag:",
+    "Ich mag deinen Humor und Selbstbewusstsein",
+    "Ich mag, dass du deine Zeit für jemanden nicht so einfach verbringst und dass du jemanden gut testest, bevor du ihn einlässt",
+    "By the way, dein Lächeln ist echt addicting",
+    "Danke für deine Aufmerksamkeit!"
+  ];
+  let currentIndex = 0;
+
+  function nextText() {
+    currentIndex++;
+    if (currentIndex < texts.length) {
+      document.getElementById("carouselText").textContent = texts[currentIndex];
+    } else {
+      document.getElementById("carouselText").style.display = "none";
+      document.getElementById("carouselButton").style.display = "none";
+    }
+  }
+</script>
+
+</body>
+</html>
